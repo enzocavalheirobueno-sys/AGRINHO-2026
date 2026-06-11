@@ -1,1 +1,558 @@
+/* ========================================
+   VARIAÇÕES DE CORES - TEMA SUSTENTÁVEL
+   ======================================== */
+:root {
+    --cor-primaria: #2d6a4f;         /* Verde escuro principal */
+    --cor-primaria-destaque: #40916c; /* Verde médio */
+    --cor-primaria-leve: #d8f3dc;     /* Verde muito leve */
+    --cor-destaque: #52b788;          /* Verde brilhante para botões */
+    --cor-texto: #1b4332;             /* Texto escuro */
+    --cor-texto-leve: #525252;        /* Texto secundário */
+    --cor-fundo: #f7fff9;             /* Fundo quase branco */
+    --cor-fundo-secao: #d8f3dc;       /* Fundo de seções alternadas */
+    --cor-borda: #b7e4c7;             /* Bordas sutis */
+    --cor-botao: #2d6a4f;             /* Botão principal */
+    --cor-botao-texto: #ffffff;       /* Texto do botão */
+    --cor-rodape: #1b4332;            /* Rodapé escuro */
+    --cor-social: #40916c;            /* Cores sociais */
+}
 
+/* ========================================
+   RESET BÁSICO E CONFIGURAÇÕES GERAIS
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto-leve);
+    background-color: var(--cor-fundo);
+    overflow-x: hidden;
+}
+
+/* ========================================
+   CLASSE CONTAINER - CENTRALIZAÇÃO
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   CABEÇALHO (HEADER)
+   ======================================== */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-fundo);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+nav ul li a {
+    color: var(--cor-fundo);
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: var(--cor-primaria-destaque);
+    color: var(--cor-fundo);
+}
+
+/* Menu responsivo para celulares */
+nav ul li {
+    position: relative;
+}
+
+/* ========================================
+   BANNER PRINCIPAL (HERO)
+   ======================================== */
+.hero {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-destaque) 100%);
+    color: var(--cor-fundo);
+    padding: 150px 20px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--cor-fundo);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.slogan {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: var(--cor-primaria-leve);
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--cor-fundo);
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: var(--cor-primaria-destaque);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   SEÇÕES PRINCIPALES
+   ======================================== */
+.section {
+    padding: 80px 20px;
+}
+
+.section:nth-child(even) {
+    background-color: var(--cor-fundo-secao);
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--cor-destaque);
+    border-radius: 2px;
+}
+
+.section p {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: var(--cor-texto-leve);
+}
+
+/* ========================================
+   GRID DE ARTIGOS
+   ======================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+article {
+    background-color: var(--cor-fundo);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--cor-borda);
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-color: var(--cor-destaque);
+}
+
+article h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+article p {
+    font-size: 1rem;
+    color: var(--cor-texto-leve);
+    line-height: 1.7;
+    margin: 0;
+    text-align: left;
+}
+
+/* ========================================
+   FORMULÁRIO DE CONTATO
+   ======================================== */
+#contato .section h2::after {
+    left: 50%;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--cor-fundo);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--cor-borda);
+}
+
+form label {
+    font-weight: 600;
+    color: var(--cor-primaria);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 1rem;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px var(--cor-primaria-leve);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form button {
+    background-color: var(--cor-botao);
+    color: var(--cor-botao-texto);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+form button:hover {
+    background-color: var(--cor-primaria-destaque);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   RODAPÉ (FOOTER)
+   ======================================== */
+footer {
+    background-color: var(--cor-rodape);
+    color: var(--cor-fundo);
+    padding: 50px 20px 30px;
+    text-align: center;
+}
+
+footer .container {
+    max-width: 800px;
+}
+
+footer p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: var(--cor-primaria-leve);
+}
+
+.social {
+    margin-top: 30px;
+}
+
+.social p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--cor-fundo);
+    margin-bottom: 15px;
+}
+
+.social a {
+    display: inline-block;
+    color: var(--cor-fundo);
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background-color: var(--cor-primaria-destaque);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    background-color: var(--cor-destaque);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   RESPONSIVIDADE - CELULARES E TABLETS
+   ======================================== */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+    
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+    }
+    
+    nav ul li a {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .hero {
+        padding: 120px 15px 80px;
+    }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .slogan {
+        font-size: 1.2rem;
+    }
+    
+    .subtitulo {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 60px 15px;
+    }
+    
+    .section h2 {
+        font-size: 2rem;
+    }
+    
+    .section p {
+        font-size: 1rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    article {
+        padding: 25px;
+    }
+    
+    article h3 {
+        font-size: 1.3rem;
+    }
+    
+    article p {
+        font-size: 0.95rem;
+    }
+    
+    form {
+        padding: 30px 20px;
+    }
+    
+    form input,
+    form textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+    
+    form button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 40px 15px 25px;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+    }
+    
+    .social a {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        margin: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul li a {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .slogan {
+        font-size: 1rem;
+    }
+    
+    .section h2 {
+        font-size: 1.7rem;
+    }
+    
+    article {
+        padding: 20px;
+    }
+}
+
+/* ========================================
+   ANIMAÇÕES E EFEITOS EXTRAS
+   ======================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Scroll suave para links internos */
+a[href^="#"] {
+    scroll-margin-top: 80px;
+}
+
+/* Foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   IMPRESSÃO - Otimização para PDF
+   ======================================== */
+@media print {
+    header {
+        position: static;
+    }
+    
+    .hero {
+        padding: 50px 20px;
+    }
+    
+    article {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
