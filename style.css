@@ -1,13 +1,8 @@
+/* ==================== RESET E BASE ==================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7;
-    color: #333333;
+@@ -12,20 +11,26 @@ body {
     background-color: #f8f9f5;
 }
 
@@ -34,14 +29,7 @@ header {
 }
 
 header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.logo h1 {
+@@ -40,33 +45,60 @@ header .container {
     color: #2e7d32;
     font-size: 2.2rem;
     font-weight: 700;
@@ -102,8 +90,7 @@ nav a:hover::after {
     background: linear-gradient(rgba(46, 125, 50, 0.82), rgba(27, 94, 32, 0.88)), 
                 url('https://picsum.photos/id/1016/2000/1200') center/cover no-repeat;
     color: #ffffff;
-    padding: 0 20px;
-}
+@@ -75,53 +107,79 @@ nav a:hover {
 
 .hero-content {
     max-width: 850px;
@@ -183,8 +170,7 @@ nav a:hover::after {
     color: #1b5e20;
     margin-bottom: 25px;
     position: relative;
-    display: inline-block;
-}
+@@ -130,47 +188,66 @@ nav a:hover {
 
 .section h2::after {
     content: '';
@@ -251,11 +237,7 @@ article h3 {
     margin-bottom: 18px;
     line-height: 1.3;
 }
-
-article p {
-    color: #555555;
-    font-size: 1.05rem;
-    line-height: 1.7;
+@@ -182,17 +259,26 @@ article p {
     margin-bottom: 0;
 }
 
@@ -282,8 +264,7 @@ form label {
     color: #333;
     margin-bottom: 6px;
     display: block;
-}
-
+@@ -201,9 +287,14 @@ form label {
 form input,
 form textarea {
     width: 100%;
@@ -298,98 +279,3 @@ form textarea {
     font-size: 1.05rem;
     font-family: inherit;
     transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-form input:focus,
-form textarea:focus {
-    outline: none;
-    border-color: #2e7d32;
-    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.15);
-}
-
-form textarea {
-    min-height: 160px;
-    resize: vertical;
-}
-
-form button {
-    background-color: #2e7d32;
-    color: white;
-    padding: 18px 40px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.15rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-    align-self: flex-start;
-}
-
-form button:hover {
-    background-color: #1b5e20;
-    transform: translateY(-3px);
-}
-
-/* ==================== RODAPÉ ==================== */
-footer {
-    background-color: #1b5e20;
-    color: #e8f5e9;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-footer p {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-}
-
-footer .social {
-    margin-top: 25px;
-}
-
-footer .social a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-footer .social a:hover {
-    color: #a5d6a7;
-}
-
-/* ==================== RESPONSIVO (CELULAR) ==================== */
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2.8rem;
-    }
-    
-    .hero .slogan {
-        font-size: 1.3rem;
-    }
-    
-    nav ul {
-        gap: 1.2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .section {
-        padding: 60px 0;
-    }
-    
-    .section h2 {
-        font-size: 2.2rem;
-    }
-    
-    .grid {
-        grid-template-columns: 1fr;
-    }
-    
-    form button {
-        width: 100%;
-        text-align: center;
-    }
-}
